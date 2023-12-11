@@ -32,7 +32,7 @@ O _dataset_ utilizado possui os seguintes 11 atributos de entrada, baseados em p
 
 - _chlorides_ (cloretos): quantidade de sais no vinho;
 
-- _free sulfur dioxide_ (dióxido de enxofre livre): forma livre de SO2 existente entre SO2 molecular (como gás dissolvido) e íon bissulfito.
+- _free sulfur dioxide_ (dióxido de enxofre livre): forma livre de SO2 existente entre SO2 molecular (como gás dissolvido) e íon bissulfito;
 
 - _total sulfur dioxide_ (dióxido de enxofre total): quantidade de SO2 livre e vinculado;
 
@@ -42,11 +42,84 @@ O _dataset_ utilizado possui os seguintes 11 atributos de entrada, baseados em p
 
 - _sulphates_ (sulfatos): um aditivo do vinho que pode contribuir os níveis de gás dióxido de enxofre;
 
-- _alcohol_ (álcool): percentual de álcool contido no vinho 
+- _alcohol_ (álcool): percentual de álcool contido no vinho.
 
 E 1 atributo de saída, baseado em dados sensoriais:
 
 - _quality_ (qualidade): qualidade do vinho, avaliada com notas entre 0 e 10 (originalmente) e notas 0 ou 1 (pós tratamento)
 
 ---
+
+## Como executar API e o Front da aplicação _Wine Classification_
+
+Requisitos da API:
+- Instalar as libs listadas no arquivo `requirements.txt`.
+- É recomendado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
+
+1 - Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo:
+```
+cd mvp-sprint-3-dataset\wine_classification_api
+```
+
+2 - Instalar Virtualenv
+```
+$ pip install VirtualEnv
+```
+
+3 - Criar Virtualenv
+```
+$ VirtualEnv venv
+```
+
+4 - Ativar venv
+```
+$ venv/scripts/activate
+```
+
+5 - Instalar libs python
+```
+(venv)$ pip install -r requirements.txt
+```
+
+6 - Executar API:
+```
+(venv)$ flask run --host 0.0.0.0 --port 5000
+```
+
+Em caso de modificações no código enquanto a API estiver rodando, utilizar o parâmetro reload, que reiniciará o servidor
+automaticamente após uma mudança no código fonte. 
+
+```
+(env)$ flask run --host 0.0.0.0 --port 5000 --reload
+```
+
+Após seguir todos os passos, abrir o link abaixo no bavegador para verificar o status da API em execução
+- [http://localhost:5000/#/](http://localhost:5000/#/)
+
+Link para Documentação:
+- [http://127.0.0.1:5000/openapi/]
+
+## Como executar o Front
+
+Basta fazer o download do projeto e abrir o arquivo _index.html_ no seu browser.
+
+---
+## Critério e execução da classe de Teste
+
+Para a Classe de Teste, o critério para validação é a Acurácia do modelo KNN. Para aprovação, foi definido que o resultado seja maior que 0.6 (60%) de acurácia.
+
+Foi utilizado 200 dados aleatórios dos 400 dados do dataset tratado. Foram utilizados os mesmos dados pelo fato de o dataset não possuir tantos registros para divisão entre treino e teste.
+
+Instruções para execução:
+
+1 - Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo:
+
+```
+cd pucrio-mvp-sprint3-dataset-master\predict_api
+```
+
+2 - Executar o comando abaixo para obter o resultado do Teste com a metodologia de classificação KNN
+```
+$ pytest –v test_modelos
+```
 
