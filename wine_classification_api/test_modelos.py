@@ -9,7 +9,7 @@ avaliador = Avaliador()
 
 # Parâmetros    
 url_dados = "database/winequality-red.csv"
-colunas = ['fixedAcidity', 'volatileAcidity', 'citricAcid', 'residualSugar', 'chlorides', 'freeSulfurDioxide', 'totalSulfurDioxide', 'density', 'ph', 'sulphates']
+colunas = ['fixedAcidity', 'volatileAcidity', 'citricAcid', 'residualSugar', 'chlorides', 'freeSulfurDioxide', 'totalSulfurDioxide', 'density', 'ph', 'sulphates', 'alcohol', 'quality']
 
 # Carga dos dados
 dataset = carregador.carregar_dados(url_dados, colunas)
