@@ -10,7 +10,9 @@ const getList = async () => {
     })
         .then((response) => response.json())
         .then((data) => {
-            data.vinhos.forEach(item => insertList(item.fixedAcidity,
+            data.vinhos.forEach(item => insertList(
+                item.name,
+                item.fixedAcidity,
                 item.volatileAcidity,
                 item.citricAcid,
                 item.residualSugar,
@@ -41,12 +43,13 @@ getList()
   Função para colocar um item na lista do servidor via requisição POST
   --------------------------------------------------------------------------------------
 */
-const postItem = async (inputFixedAcitidy, inputVolatileAcitidy, inputCitricAcid,
+const postItem = async (inputName, inputFixedAcitidy, inputVolatileAcitidy, inputCitricAcid,
     inputResidualSugar, inputChlorides, inputFreeSulfurDioxide,
     inputTotalSulfurDioxide, inputDensity, inputPh,
     inputSulphates, inputAlcohol) => {
 
     const formData = new FormData();
+    formData.append('name', inputName);
     formData.append('fixedAcidity', inputFixedAcitidy);
     formData.append('volatileAcidity', inputVolatileAcitidy);
     formData.append('citricAcid', inputCitricAcid);
@@ -110,8 +113,8 @@ const removeElement = () => {
   Função para deletar um item da lista do servidor via requisição DELETE
   --------------------------------------------------------------------------------------
 */
-const deleteItem = (id) => {
-    let url = 'http://127.0.0.1:5000/vinho?id=' + id;
+const deleteItem = (name) => {
+    let url = 'http://127.0.0.1:5000/vinho?name=' + name;
     fetch(url, {
         method: 'delete'
     })
@@ -127,6 +130,7 @@ const deleteItem = (id) => {
   --------------------------------------------------------------------------------------
 */
 const newItem = async () => {
+    let inputName = document.getElementById("newName").value;
     let inputFixedAcitidy = document.getElementById("newFixedAcidity").value;
     let inputVolatileAcidity = document.getElementById("newVolatileAcidity").value;
     let inputCitricAcid = document.getElementById("newCitricAcid").value;
@@ -139,7 +143,7 @@ const newItem = async () => {
     let inputSulphates = document.getElementById("newSulphates").value;
     let inputAlcohol = document.getElementById("newAlcohol").value;
 
-    const checkUrl = `http://127.0.0.1:5000/vinhos?nome=${inputPatient}`;
+    const checkUrl = `http://127.0.0.1:5000/vinhos?name=${inputName}`;
     fetch(checkUrl, {
         method: 'get'
     })
@@ -151,9 +155,11 @@ const newItem = async () => {
             } else if (isNaN(inputFixedAcitidy) || isNaN(inputVolatileAcidity) || isNaN(inputCitricAcid) || isNaN(inputResidualSugar) || isNaN(inputChlorides) ||
                 isNaN(inputFreeSulfurDioxide) || isNaN(inputTotalSulfurDioxide) || isNaN(inputDensity) || isNaN(inputPh) || isNaN(inputSulphates) || isNaN(inputAlcohol)) {
                 alert("Todos os campos precisam ser numéricos!");
+            } else if (inputName === '') {
+                    alert("O nome da amostra do vinho não pode ser vazio!");
             } else {
-                insertList(inputFixedAcitidy, inputVolatileAcidity, inputCitricAcid, inputResidualSugar, inputChlorides, inputFreeSulfurDioxide, inputTotalSulfurDioxide, inputDensity, inputPh, inputSulphates, inputAlcohol);
-                postItem(inputFixedAcitidy, inputVolatileAcidity, inputCitricAcid, inputResidualSugar, inputChlorides, inputFreeSulfurDioxide, inputTotalSulfurDioxide, inputDensity, inputPh, inputSulphates, inputAlcohol);
+                insertList(inputName, inputFixedAcitidy, inputVolatileAcidity, inputCitricAcid, inputResidualSugar, inputChlorides, inputFreeSulfurDioxide, inputTotalSulfurDioxide, inputDensity, inputPh, inputSulphates, inputAlcohol);
+                postItem(inputName, inputFixedAcitidy, inputVolatileAcidity, inputCitricAcid, inputResidualSugar, inputChlorides, inputFreeSulfurDioxide, inputTotalSulfurDioxide, inputDensity, inputPh, inputSulphates, inputAlcohol);
                 alert("Vinho adicionado!");
             }
         })
@@ -168,8 +174,8 @@ const newItem = async () => {
   Função para inserir items na lista apresentada
   --------------------------------------------------------------------------------------
 */
-const insertList = (fixedAcitidy, volatileAcidity, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality) => {
-    var item = [fixedAcitidy, volatileAcidity, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality];
+const insertList = (name, fixedAcitidy, volatileAcidity, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality) => {
+    var item = [name, fixedAcitidy, volatileAcidity, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality];
     var table = document.getElementById('myTable');
     var row = table.insertRow();
 
@@ -181,6 +187,7 @@ const insertList = (fixedAcitidy, volatileAcidity, residualSugar, chlorides, fre
     var deleteCell = row.insertCell(-1);
     insertDeleteButton(deleteCell);
 
+    document.getElementById("newName").value = "";
     document.getElementById("newFixedAcidity").value = "";
     document.getElementById("newVolatileAcidity").value = "";
     document.getElementById("newCitricAcid").value = "";

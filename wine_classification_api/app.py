@@ -9,9 +9,8 @@ from logger import logger
 from schemas import *
 from flask_cors import CORS
 
-
 # Instanciando o objeto OpenAPI
-info = Info(title="Minha API", version="1.0.0")
+info = Info(title="Wine Quality Predict API", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 CORS(app)
 
@@ -41,11 +40,13 @@ def get_vinhos():
     Returns:
         list: lista de vinhos cadastrados na base
     """
+    
+    # criando conexão com a base
     session = Session()
     
     # Buscando todos os vinhos
     vinhos = session.query(Vinho).all()
-    
+
     if not vinhos:
         logger.warning("Não há vinhos cadastrados na base :/")
         return {"message": "Não há vinhos cadastrados na base :/"}, 404
@@ -54,45 +55,35 @@ def get_vinhos():
         return apresenta_vinhos(vinhos), 200
 
 
-# Rota de adição de vinho
+# Rota de adição/predição de vinho
 @app.post('/vinho', tags=[vinho_tag],
           responses={"200": VinhoViewSchema, "400": ErrorSchema, "409": ErrorSchema})
 def predict(form: VinhoSchema):
-    """Adiciona um novo vinho à base de dados
-    Retorna uma representação dos vinhos e diagnósticos associados.
-    
-    Args:
-        name (str): nome do vinho
-        preg (int): número de vezes que engravidou: Pregnancies
-        plas (int): concentração de glicose no plasma: Glucose
-        pres (int): pressão diastólica (mm Hg): BloodPressure
-        skin (int): espessura da dobra cutânea do tríceps (mm): SkinThickness
-        test (int): insulina sérica de 2 horas (mu U/ml): Insulin
-        mass (float): índice de massa corporal (peso em kg/(altura em m)^2): BMI
-        pedi (float): função pedigree de diabetes: DiabetesPedigreeFunction
-        age (int): idade (anos): Age
-        
-    Returns:
-        dict: representação do vinho e diagnóstico associado
+    """Adiciona um novo candidato à base de dados
+    Retorna uma representação dos candidatos e predições associadas.
     """
     
-    # Carregando modelo
-    ml_path = 'ml_model/diabetes_lr.pkl'
+    #ALTERAR NOME MODELO
+    ml_path = 'ml_model/winequality_.pkl'
     modelo = Model.carrega_modelo(ml_path)
     
     vinho = Vinho(
         name=form.name.strip(),
-        preg=form.preg,
-        plas=form.plas,
-        pres=form.pres,
-        skin=form.skin,
-        test=form.test,
-        mass=form.mass,
-        pedi=form.pedi,
-        age=form.age,
-        outcome=Model.preditor(modelo, form)
+        fixed_acidity=form.fixed_acidity,
+        volatile_acidity=form.volatile_acidity,
+        citric_acid=form.citric_acid,
+        residual_sugar=form.residual_sugar,
+        chlorides=form.chlorides,
+        free_sulfur_dioxide=form.free_sulfur_dioxide,
+        total_sulfur_dioxide=form.total_sulfur_dioxide,
+        density=form.density,
+        ph=form.ph,
+        sulphates=form.sulphates,
+        alcohol=form.alcohol,
+        quality=Model.preditor(modelo, form)
     )
-    logger.debug(f"Adicionando produto de nome: '{vinho.name}'")
+
+    logger.debug(f"Adicionando vinho de nome: '{vinho.name}'")
     
     try:
         # Criando conexão com a base
@@ -114,27 +105,25 @@ def predict(form: VinhoSchema):
     
     # Caso ocorra algum erro na adição
     except Exception as e:
-        error_msg = "Não foi possível salvar novo item :/"
+        error_msg = "Não foi possível salvar novo vinho :/"
         logger.warning(f"Erro ao adicionar vinho '{vinho.name}', {error_msg}")
         return {"message": error_msg}, 400
-    
 
-# Métodos baseados em nome
-# Rota de busca de vinho por nome
+
+# Rota de busca de candidato por nome
 @app.get('/vinho', tags=[vinho_tag],
          responses={"200": VinhoViewSchema, "404": ErrorSchema})
 def get_vinho(query: VinhoBuscaSchema):    
     """Faz a busca por um vinho cadastrado na base a partir do nome
-
     Args:
-        nome (str): nome do vinho
+        nome (str): nome da amostra do vinho
         
     Returns:
         dict: representação do vinho e diagnóstico associado
     """
     
     vinho_nome = query.name
-    logger.debug(f"Coletando dados sobre produto #{vinho_nome}")
+    logger.debug(f"Coletando dados sobre vinho #{vinho_nome}")
     # criando conexão com a base
     session = Session()
     # fazendo a busca
@@ -143,27 +132,27 @@ def get_vinho(query: VinhoBuscaSchema):
     if not vinho:
         # se o vinho não foi encontrado
         error_msg = f"Vinho {vinho_nome} não encontrado na base :/"
-        logger.warning(f"Erro ao buscar produto '{vinho_nome}', {error_msg}")
+        logger.warning(f"Erro ao buscar vinho '{vinho_nome}', {error_msg}")
         return {"mesage": error_msg}, 404
     else:
-        logger.debug(f"Vinho econtrado: '{vinho.name}'")
+        logger.debug(f"Vinho encontrado: '{vinho.name}'")
         # retorna a representação do vinho
         return apresenta_vinho(vinho), 200
-   
-    
+
+
 # Rota de remoção de vinho por nome
 @app.delete('/vinho', tags=[vinho_tag],
-            responses={"200": VinhoViewSchema, "404": ErrorSchema})
+            responses={"200": VinhoViewSchema, "404": ErrorSchema}) #responses={"200": CandidatoDelSchema, "404": ErrorSchema})
 def delete_vinho(query: VinhoBuscaSchema):
-    """Remove um vinho cadastrado na base a partir do nome
+    """Remove um vinho cadastrado na base a partir do nome da amostra
 
     Args:
-        nome (str): nome do vinho
+        nome (str): nome da amostra do vinho
         
     Returns:
         msg: Mensagem de sucesso ou erro
     """
-    
+
     vinho_nome = unquote(query.name)
     logger.debug(f"Deletando dados sobre vinho #{vinho_nome}")
     
