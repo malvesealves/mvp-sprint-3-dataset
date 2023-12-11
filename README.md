@@ -108,7 +108,7 @@ Basta fazer o download do projeto e abrir o arquivo _index.html_ no seu browser.
 ---
 ## Critério e execução da classe de Teste
 
-O critério de validação a ser considerado será a acurária do modelo KNN padronizado escolhido. Para implementar a classe de teste, foi criada a assertiva de acurária maior ou igual a 60% para aprovação do teste e do seu respectivo modelo.
+O critério de validação a ser considerado será a acurária do modelo KNN padronizado escolhido. Para implementar a classe de teste, foi criada a assertiva de acurária maior ou igual a 70% para aprovação do teste e do seu respectivo modelo.
 
 Foram utilizados os dados disponibilizados no _dataset_ tratado para conjunto de teste.
 
