@@ -49,6 +49,10 @@ header {
     clear: both;
 }
 
+.firstLineItem {
+    padding: 8px;
+}
+
 .addBtn {
     padding: 9px 10px;
     background-color: rgb(35, 32, 24);
@@ -97,7 +101,7 @@ td {
 
 table{
     background-color: white;
-    width: 50%;
+    width: 80%;
 }
 
 tr:nth-child(odd){
@@ -105,7 +109,7 @@ tr:nth-child(odd){
 }
 
 th:nth-child(1){
-    width: 80%;
+    width: 10%;
 }
 
 tr:hover {

@@ -191,18 +191,19 @@ const insertList = (name, fixedAcitidy, volatileAcidity, citricAcid, residualSug
     var deleteCell = row.insertCell(-1);
     insertDeleteButton(deleteCell);
 
-    document.getElementById("newName").value = "";
-    document.getElementById("newFixedAcidity").value = "";
-    document.getElementById("newVolatileAcidity").value = "";
-    document.getElementById("newCitricAcid").value = "";
-    document.getElementById("newResidualSugar").value = "";
-    document.getElementById("newChlorides").value = "";
-    document.getElementById("newFreeSulfurDioxide").value = "";
-    document.getElementById("newTotalSulfurDioxide").value = "";
-    document.getElementById("newDensity").value = "";
-    document.getElementById("newPh").value = "";
-    document.getElementById("newSulphates").value = "";
-    document.getElementById("newAlcohol").value = "";
+    // DESFAZER COMENTÁRIOS
+    // document.getElementById("newName").value = "";
+    // document.getElementById("newFixedAcidity").value = "";
+    // document.getElementById("newVolatileAcidity").value = "";
+    // document.getElementById("newCitricAcid").value = "";
+    // document.getElementById("newResidualSugar").value = "";
+    // document.getElementById("newChlorides").value = "";
+    // document.getElementById("newFreeSulfurDioxide").value = "";
+    // document.getElementById("newTotalSulfurDioxide").value = "";
+    // document.getElementById("newDensity").value = "";
+    // document.getElementById("newPh").value = "";
+    // document.getElementById("newSulphates").value = "";
+    // document.getElementById("newAlcohol").value = "";
 
     removeElement();
 }

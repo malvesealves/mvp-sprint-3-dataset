@@ -65,7 +65,7 @@ def predict(form: VinhoSchema):
     
     # Carregando modelo gerado no Colab e adicionado a determinado diretório no Github
     ml_path = 'ml_model/winequality_knn_pdr.pkl'
-    modelo = Model.carrega_modelo(ml_path)
+    modelo = Model().carrega_modelo(ml_path)
     
     vinho = Vinho(
         name=form.name.strip(),
@@ -80,7 +80,7 @@ def predict(form: VinhoSchema):
         ph=form.ph,
         sulphates=form.sulphates,
         alcohol=form.alcohol,
-        quality=Model.preditor(modelo, form)
+        quality=Model().preditor(modelo, form)
     )
 
     logger.debug(f"Adicionando vinho de nome: '{vinho.name}'")

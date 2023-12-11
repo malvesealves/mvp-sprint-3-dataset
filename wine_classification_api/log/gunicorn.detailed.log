@@ -1,5 +1,15 @@
-[2023-12-11 15:57:12,155] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 15:57:47,054] ERROR log_exception() L825  Exception on /vinho [POST] - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py L825 
+[2023-12-11 18:58:31,597] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.105:5000 - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:31,599] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:31,609] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:36,148] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 18:58:36] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:36,245] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 18:58:36] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:36,246] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 18:58:36] "GET /openapi/static/css/swagger-ui.css HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:36,247] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 18:58:36] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:36,337] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 18:58:36] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:58:42,471] ERROR log_exception() L825  Exception on /vinho [POST] - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py L825 
 Traceback (most recent call last):
   File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
     response = self.full_dispatch_request()
@@ -19,43 +29,18 @@ Traceback (most recent call last):
   File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
     response = func(**func_kwargs)
                ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py", line 83, in predict
-    quality=Model.preditor(modelo, form)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\model\modelo.py", line 24, in preditor
-    form.fixed_acidity,
-    ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\pydantic\main.py", line 761, in __getattr__
-    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
-AttributeError: 'VinhoSchema' object has no attribute 'fixed_acidity'
-[2023-12-11 15:57:47,060] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 15:57:47] "[35m[1mPOST /vinho HTTP/1.1[0m" 500 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 15:58:27,156] INFO _log() L96    * Detected change in 'C:\\Users\\malve\\source\\repos\\mvp-sprint-3-dataset\\wine_classification_api\\model\\modelo.py', reloading - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 15:58:27,342] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:03:42,751] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.68.105:5000 - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:03:42,752] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:03:42,753] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:10,925] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:10] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:10,941] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:10] "[32mGET /openapi HTTP/1.1[0m" 308 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:10,956] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:10] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:11,081] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:11] "GET /openapi/static/images/swagger.svg HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:11,086] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:11] "GET /openapi/static/images/redoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:11,087] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:11] "GET /openapi/static/images/rapidoc.svg HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:13,017] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:13] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:13,065] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:13] "GET /openapi/static/css/swagger-ui.css HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:13,066] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:13] "GET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:13,067] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:13] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:13,189] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:13] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:28,042] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:05:28] "POST /vinho HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:41,059] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 16:05:41] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:05:57,955] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 16:05:57] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:06:07,523] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 16:06:07] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:07:06,704] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 16:07:06] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:27:39,847] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on all addresses (0.0.0.0)
- * Running on http://127.0.0.1:5000
- * Running on http://192.168.68.105:5000 - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:27:39,847] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
-[2023-12-11 16:27:39,849] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py", line 84, in predict
+    quality=Model().preditor(modelo, form)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\model\modelo.py", line 37, in preditor
+    diagnosis = model().predict(X_input.reshape(1, -1))
+                ^^^^^^^
+TypeError: 'Model' object is not callable
+[2023-12-11 18:58:42,474] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 18:58:42] "[35m[1mPOST /vinho HTTP/1.1[0m" 500 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:59:28,222] INFO _log() L96    * Detected change in 'C:\\Users\\malve\\source\\repos\\mvp-sprint-3-dataset\\wine_classification_api\\app.py', reloading - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:59:28,406] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:59:51,542] INFO _log() L96    * Detected change in 'C:\\Users\\malve\\source\\repos\\mvp-sprint-3-dataset\\wine_classification_api\\model\\modelo.py', reloading - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:59:51,716] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:59:59,512] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 18:59:59] "POST /vinho HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 19:00:08,484] INFO _log() L96   192.168.68.105 - - [11/Dec/2023 19:00:08] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 19:00:15,534] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 19:00:15] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  

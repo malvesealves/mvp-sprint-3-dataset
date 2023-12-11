@@ -17,7 +17,7 @@ class Model:
             raise Exception('Formato de arquivo não suportado')
         return model
     
-    def preditor(model, form):
+    def preditor(self, model, form):
         """Realiza a predição de classificação um vinho com base no modelo treinado
         """
         X_input = np.array([
