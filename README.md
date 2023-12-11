@@ -106,9 +106,9 @@ Basta fazer o download do projeto e abrir o arquivo _index.html_ no seu browser.
 ---
 ## Critério e execução da classe de Teste
 
-Para a Classe de Teste, o critério para validação é a Acurácia do modelo KNN. Para aprovação, foi definido que o resultado seja maior que 0.6 (60%) de acurácia.
+O critério de validação a ser considerado será a acurária do modelo KNN padronizado escolhido. Para implementar a classe de teste, foi criada a assertiva de acurária maior ou igual a 60% para aprovação do teste e do seu respectivo modelo.
 
-Foi utilizado 200 dados aleatórios dos 400 dados do dataset tratado. Foram utilizados os mesmos dados pelo fato de o dataset não possuir tantos registros para divisão entre treino e teste.
+Foram utilizados os dados disponibilizados no _dataset_ tratado para conjunto de teste.
 
 Instruções para execução:
 
