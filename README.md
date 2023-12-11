@@ -9,7 +9,7 @@ Neste repositório são disponibilizados os seguintes conteúdos relativos ao pr
 
 - Notebook (Google Colab) contendo o processo de criação do modelo de _machine learning_. O notebook pode ser encontrado no [link](https://colab.research.google.com/drive/1tfvosFF_qT-ACnfLy3NHU0pjtJ67A3nc) ou pode ser aberto ao acessar o arquivo NOTEBOOK_MVP_SPRINT3.ipynb disponibilizado no presente repositório;
 - Dataset nomeado como '_Red Wine Quality_' utilizado como fonte de dados e encontrado na fonte [Kaggle](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009);
-- Pasta "Data CSV Files" com o _dataset_ usado;
+- Pasta "Data CSV Files" com os _datasets_ original e tratado;
 - Diretórios e arquivos referentes às aplicações back e front, respectivamente, para fazer a carga do arquivo do modelo de machine learning e possibilitar a entrada de novos dados para que o modelo de classificação faça a predição da classe de saída e exibir o resultado na tela.
 
 # Tema
@@ -21,7 +21,9 @@ O presente projeto tem por objetivo classificar a qualidade de variantes de vinh
 
 > __Foi feito tratamento nos dados originais do _dataset_ para respeitar a assertiva acerca da classificação do vinho como um bom vinho (1) e como um não bom vinho (0), logo, o parâmetro _quality_ de valores iniciais variando entre 0 e 10 dará lugar aos possíveis valores 0 e 1.__
 
-O _dataset_ utilizado possui os seguintes 11 atributos de entrada, baseados em propriedades físico-químicas, e suas breves explicações:
+O _dataset_ utilizado possui os seguintes 12 atributos de entrada, baseados em propriedades físico-químicas, e suas breves explicações:
+- _name_ (nome): nome atribuído à cada amostra de vinho para manipulação dos dados;
+
 - _fixed acidity_ (acidez fixa): composto pela maioria dos ácidos envolvidos com vinho, fixos ou não voláteis (não evaporam facilmente);
 
 - _volatile acidity_ (acidez volátivel): quantidade de ácido acético no vinho, na qual a níveis muito altos pode levar a um gosto desagradável;
