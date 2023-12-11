@@ -13,3 +13,12 @@
 [2023-12-11 20:16:26,363] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 20:16:26] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
 [2023-12-11 20:16:39,537] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 20:16:39] "OPTIONS /vinho?name=Amostra2 HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
 [2023-12-11 20:16:39,554] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 20:16:39] "DELETE /vinho?name=Amostra2 HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 20:24:40,922] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.105:5000 - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 20:24:40,923] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 20:24:40,924] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 20:24:47,895] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 20:24:47] "GET /vinhos HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 20:24:52,929] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 20:24:52] "OPTIONS /vinho?name=Amostra1 HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 20:24:52,948] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 20:24:52] "DELETE /vinho?name=Amostra1 HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
