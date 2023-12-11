@@ -20,14 +20,18 @@ class Model:
     def preditor(self, model, form):
         """Realiza a predição de classificação um vinho com base no modelo treinado
         """
-        X_input = np.array([form.preg, 
-                            form.plas, 
-                            form.pres, 
-                            form.skin, 
-                            form.test, 
-                            form.mass, 
-                            form.pedi, 
-                            form.age
+        X_input = np.array([
+                            form.fixed_acidity,
+                            form.volatile_acidity, 
+                            form.citric_acid, 
+                            form.residual_sugar, 
+                            form.chlorides, 
+                            form.free_sulfur_dioxide, 
+                            form.total_sulfur_dioxide, 
+                            form.density,
+                            form.ph,
+                            form.sulphates,
+                            form.alcohol
                         ])
         # Faremos o reshape para que o modelo entenda que estamos passando
         diagnosis = model.predict(X_input.reshape(1, -1))
