@@ -15,9 +15,9 @@ Neste repositório são disponibilizados os seguintes conteúdos relativos ao pr
 # Tema
 O presente projeto tem por objetivo classificar a qualidade de variantes de vinhos tintos do rótulo português "Vinho Verde" de acordo com o arbitrado para o atributo qualidade do vinho a seguir:
 
-- _Good wine_ (bom vinho): qualidade do vinho > 6.5 ;
+- _Good wine_ (bom vinho): qualidade do vinho >= 7;
 
-- _Not good wine_ (não bom vinho): qualidade do vino <= 6.5;
+- _Not good wine_ (não bom vinho): qualidade do vino < 7;
 
 > __Foi feito tratamento nos dados originais do _dataset_ para respeitar a assertiva acerca da classificação do vinho como um bom vinho (1) e como um não bom vinho (0), logo, o parâmetro _quality_ de valores iniciais variando entre 0 e 10 dará lugar aos possíveis valores 0 e 1.__
 
