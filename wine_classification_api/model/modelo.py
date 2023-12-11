@@ -7,7 +7,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import MinMaxScaler
 
 class Model:    
-    def carrega_modelo(path):
+    def carrega_modelo(self, path):
         """Carrega o modelo pkl
         """
         
