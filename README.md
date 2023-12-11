@@ -7,7 +7,7 @@ Repositório do MVP da Sprint 3 da Pós-Graduação em Engenharia de Software na
 
 Neste repositório são disponibilizados os seguintes conteúdos relativos ao projeto desenvolvido:
 
-- Notebook (Google Colab) contendo o processo de criação do modelo de _machine learning_. O notebook pode ser encontrado no [link](https://colab.research.google.com/drive/1tfvosFF_qT-ACnfLy3NHU0pjtJ67A3nc#scrollTo=n7GsW_alFtVu) ou pode ser aberto ao acessar o arquivo NOTEBOOK_MVP_SPRINT3.ipynb disponibilizado no presente repositório;
+- Notebook (Google Colab) contendo o processo de criação do modelo de _machine learning_. O notebook pode ser encontrado no [link](https://colab.research.google.com/drive/1tfvosFF_qT-ACnfLy3NHU0pjtJ67A3nc#scrollTo=m1MwHop5jUuD) ou pode ser aberto ao acessar o arquivo NOTEBOOK_MVP_SPRINT3.ipynb disponibilizado no presente repositório;
 - Dataset nomeado como '_Red Wine Quality_' utilizado como fonte de dados e encontrado na fonte [Kaggle](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009);
 - Pasta "Data CSV Files" com o _dataset_ usado;
 - Diretórios e arquivos referentes às aplicações back e front, respectivamente, para fazer a carga do arquivo do modelo de machine learning e possibilitar a entrada de novos dados para que o modelo de classificação faça a predição da classe de saída e exibir o resultado na tela.
