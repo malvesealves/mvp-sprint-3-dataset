@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>AI Wine Quality System</title>
+    <link rel="icon" href="img/home_logo.jpeg" type="image/png">
+</head>
+
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>Bem-Vindo ao AI Wine Quality System</h2>
+            <br>
+            <p>Este sistema foi desenvolvido para auxiliar na classificação de vinhos tintos.</p>
+            <p>Para isso, basta preencher os campos abaixo com os dados físico-químicos do vinho e clicar em "Classificar".</p>
+        </div>
+    </header>
+
+     <!-- Opções para adicionar um novo item -->
+     
+    <section class="newItem">
+        <input type="text" id="newFixedAcidity" placeholder="Acidez Fixa">
+        <input type="text" id="newVolatileAcidity" placeholder="Acidez Volátil">
+        <input type="text" id="newCitricAcid" placeholder="Ácido Cítrico">
+        <input type="text" id="newResidualSugar" placeholder="Açúcar Residual">
+        <input type="text" id="newChlorides" placeholder="Cloretos">
+        <input type="text" id="newFreeSulfurDioxide" placeholder="Dióxido de enxofre livre">
+        <input type="text" id="newTotalSulfurDioxide" placeholder="Dióxido de enxofre total">
+        <input type="text" id="newDensity" placeholder="Densidade">
+        <input type="text" id="newPh" placeholder="pH">
+        <input type="text" id="newSulphates" placeholder="Sulfatos">
+        <input type="text" id="newAlcohol" placeholder="Álcool">
+        <span onclick="newItem()" class="addBtn">Classificar</span>
+    </section>
+
+    <!-- Tabela com items existentes -->
+    <section class="items">
+        <table id="myTable">
+            <tr>
+                <th>Acidez Fixa</th>
+                <th>Acidez Volátil</th>
+                <th>Ácido Cítrico</th>
+                <th>Açúcar Residual</th>
+                <th>Cloretos</th>
+                <th>Dióxido de enxofre livre</th>
+                <th>Dióxido de enxofre total</th>
+                <th>Densidade</th>
+                <th>pH</th>
+                <th>Sulfatos</th>
+                <th>Álcool</th>
+                <th>Qualidade</th>
+                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15" height="15"></th>
+            </tr>
+        </table>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
