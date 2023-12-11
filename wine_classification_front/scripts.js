@@ -10,21 +10,23 @@ const getList = async () => {
     })
         .then((response) => response.json())
         .then((data) => {
-            data.vinhos.forEach(item => insertList(
-                item.name,
-                item.fixedAcidity,
-                item.volatileAcidity,
-                item.citricAcid,
-                item.residualSugar,
-                item.chlorides,
-                item.freeSulfurDioxide,
-                item.totalSulfurDioxide,
-                item.density,
-                item.ph,
-                item.sulphates,
-                item.alcohol,
-                item.quality
-            ))
+            if (data.vinhos) {
+                data.vinhos.forEach(item => insertList(
+                    item.name,
+                    item.fixedAcidity,
+                    item.volatileAcidity,
+                    item.citricAcid,
+                    item.residualSugar,
+                    item.chlorides,
+                    item.freeSulfurDioxide,
+                    item.totalSulfurDioxide,
+                    item.density,
+                    item.ph,
+                    item.sulphates,
+                    item.alcohol,
+                    item.quality
+                ))
+            }
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -61,6 +63,7 @@ const postItem = async (inputName, inputFixedAcitidy, inputVolatileAcitidy, inpu
     formData.append('ph', inputPh);
     formData.append('sulphates', inputSulphates);
     formData.append('alcohol', inputAlcohol);
+    console.log(formData);
 
     let url = 'http://127.0.0.1:5000/vinho';
     fetch(url, {
@@ -114,6 +117,7 @@ const removeElement = () => {
   --------------------------------------------------------------------------------------
 */
 const deleteItem = (name) => {
+    console.log(name);
     let url = 'http://127.0.0.1:5000/vinho?name=' + name;
     fetch(url, {
         method: 'delete'
@@ -174,8 +178,8 @@ const newItem = async () => {
   Função para inserir items na lista apresentada
   --------------------------------------------------------------------------------------
 */
-const insertList = (name, fixedAcitidy, volatileAcidity, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality) => {
-    var item = [name, fixedAcitidy, volatileAcidity, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality];
+const insertList = (name, fixedAcitidy, volatileAcidity, citricAcid, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality) => {
+    var item = [name, fixedAcitidy, volatileAcidity, citricAcid, residualSugar, chlorides, freeSulfurDioxide, totalSulfurDioxide, density, ph, sulphates, alcohol, quality];
     var table = document.getElementById('myTable');
     var row = table.insertRow();
 

@@ -21,7 +21,7 @@ Y = dataset.iloc[:, -1]
 # Método para testar modelo KNN padronizado a partir do arquivo correspondente
 def test_modelo_knn():
     # Importando modelo de KNN
-    knn_path = 'ml_model/winequality_knn_pdr.pkl'
+    knn_path = 'ml_model/winequality_knn_orig.pkl'
     modelo_knn = modelo.carrega_modelo(knn_path)
 
     # Obtendo as métricas do KNN

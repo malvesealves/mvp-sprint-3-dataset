@@ -1,0 +1,74 @@
+[2023-12-11 15:04:47,128] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:04:53,116] WARNING get_vinhos() L51   Não há vinhos cadastrados na base :/ - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py L51  
+[2023-12-11 15:04:53,117] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:04:53] "[33mGET /vinhos HTTP/1.1[0m" 404 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:05:05,859] WARNING get_vinhos() L51   Não há vinhos cadastrados na base :/ - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py L51  
+[2023-12-11 15:05:05,860] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:05:05] "[33mGET /vinhos?name=A HTTP/1.1[0m" 404 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:05:05,911] ERROR log_exception() L825  Exception on /vinho [POST] - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py L825 
+Traceback (most recent call last):
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py", line 68, in predict
+    modelo = Model.carrega_modelo(ml_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Model.carrega_modelo() missing 1 required positional argument: 'path'
+[2023-12-11 15:05:05,914] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:05:05] "[35m[1mPOST /vinho HTTP/1.1[0m" 500 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:05:48,304] WARNING get_vinhos() L51   Não há vinhos cadastrados na base :/ - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py L51  
+[2023-12-11 15:05:48,304] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:05:48] "[33mGET /vinhos HTTP/1.1[0m" 404 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:06:03,139] WARNING get_vinhos() L51   Não há vinhos cadastrados na base :/ - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py L51  
+[2023-12-11 15:06:03,139] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:06:03] "[33mGET /vinhos?name=A HTTP/1.1[0m" 404 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:06:03,224] ERROR log_exception() L825  Exception on /vinho [POST] - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py L825 
+Traceback (most recent call last):
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py", line 68, in predict
+    modelo = Model.carrega_modelo(ml_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Model.carrega_modelo() missing 1 required positional argument: 'path'
+[2023-12-11 15:06:03,226] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:06:03] "[35m[1mPOST /vinho HTTP/1.1[0m" 500 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:17:22,292] INFO _log() L96    * Detected change in 'C:\\Users\\malve\\source\\repos\\mvp-sprint-3-dataset\\wine_classification_api\\schemas\\vinho.py', reloading - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:17:22,445] INFO _log() L96    * Restarting with stat - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:17:58,796] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:17:58] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:17:58,897] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:17:58] "GET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:17:58,902] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:17:58] "GET /openapi/static/css/swagger-ui.css HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:17:58,903] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:17:58] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:17:59,042] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:17:59] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:18:04,872] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:18:04] "[35m[1mPOST /vinho HTTP/1.1[0m" 500 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:19:35,799] WARNING get_vinhos() L51   Não há vinhos cadastrados na base :/ - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\app.py L51  
+[2023-12-11 15:19:35,800] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:19:35] "[33mGET /vinhos?name=A HTTP/1.1[0m" 404 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:19:35,857] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 15:19:35] "[35m[1mPOST /vinho HTTP/1.1[0m" 500 - - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 15:22:00,970] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.68.105:5000 - call_trace=C:\Users\malve\source\repos\mvp-sprint-3-dataset\wine_classification_api\venv\Lib\site-packages\werkzeug\_internal.py L96  

@@ -12,13 +12,13 @@ class Vinho(Base):
     __tablename__ = 'vinhos'
     
     name = Column("Name", String(50),primary_key=True)
-    fixed_acidity= Column("FixedAcidity", Float)
-    volatile_acidity = Column("VolatileAcidity", Float)
-    citric_acid = Column("CitricAcid", Float)
-    residual_sugar = Column("ResidualSugar", Float)
+    fixedAcidity= Column("FixedAcidity", Float)
+    volatileAcidity = Column("VolatileAcidity", Float)
+    citricAcid = Column("CitricAcid", Float)
+    residualSugar = Column("ResidualSugar", Float)
     chlorides = Column("Chlorides", Float)
-    free_sulfur_dioxide = Column("FreeSulfurDioxide", Float)
-    total_sulfur_dioxide = Column("TotalSulfurDioxide", Float)
+    freeSulfurDioxide = Column("FreeSulfurDioxide", Float)
+    totalSulfurDioxide = Column("TotalSulfurDioxide", Float)
     density = Column("Density", Float)
     ph = Column("Ph", Float)
     sulphates = Column("Sulphates", Float)
@@ -26,8 +26,8 @@ class Vinho(Base):
     quality = Column("Quality", Integer, nullable=True)
     data_insercao = Column(DateTime, default=datetime.now())
     
-    def __init__(self, name:str, fixed_acidity:float, volatile_acidity:float, citric_acid:float, residual_sugar:float,
-                 chlorides:float, free_sulfur_dioxide:float, total_sulfur_dioxide:float, density:float,
+    def __init__(self, name:str, fixedAcidity:float, volatileAcidity:float, citricAcid:float, residualSugar:float,
+                 chlorides:float, freeSulfurDioxide:float, totalSulfurDioxide:float, density:float,
                  ph:float, sulphates:float, alcohol:float, quality:int,
                  data_insercao:Union[DateTime, None] = None):
         """
@@ -50,13 +50,13 @@ class Vinho(Base):
             data_insercao: data de quando o vinho foi inserido à base
         """
         self.name = name
-        self.fixed_acidity = fixed_acidity
-        self.volatile_acidity = volatile_acidity
-        self.citric_acid = citric_acid
-        self.residual_sugar = residual_sugar
+        self.fixedAcidity = fixedAcidity
+        self.volatileAcidity = volatileAcidity
+        self.citricAcid = citricAcid
+        self.residualSugar = residualSugar
         self.chlorides = chlorides
-        self.free_sulfur_dioxide = free_sulfur_dioxide
-        self.total_sulfur_dioxide = total_sulfur_dioxide
+        self.freeSulfurDioxide = freeSulfurDioxide
+        self.totalSulfurDioxide = totalSulfurDioxide
         self.density = density
         self.ph = ph
         self.sulphates = sulphates

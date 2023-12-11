@@ -17,17 +17,17 @@ class Model:
             raise Exception('Formato de arquivo não suportado')
         return model
     
-    def preditor(self, model, form):
+    def preditor(model, form):
         """Realiza a predição de classificação um vinho com base no modelo treinado
         """
         X_input = np.array([
-                            form.fixed_acidity,
-                            form.volatile_acidity, 
-                            form.citric_acid, 
-                            form.residual_sugar, 
+                            form.fixedAcidity,
+                            form.volatileAcidity, 
+                            form.citricAcid, 
+                            form.residualSugar, 
                             form.chlorides, 
-                            form.free_sulfur_dioxide, 
-                            form.total_sulfur_dioxide, 
+                            form.freeSulfurDioxide, 
+                            form.totalSulfurDioxide, 
                             form.density,
                             form.ph,
                             form.sulphates,
