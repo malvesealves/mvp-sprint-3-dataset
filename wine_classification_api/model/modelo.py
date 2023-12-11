@@ -1,5 +1,10 @@
 import numpy as np
+import pandas as pd
 import pickle
+from logger import logger
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import MinMaxScaler
 
 class Model:    
     def carrega_modelo(self, path):

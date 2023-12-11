@@ -8,8 +8,8 @@ modelo = Model()
 avaliador = Avaliador()
 
 # Parâmetros    
-url_dados = "database/winequality.csv"
-colunas = ['fixedAcidity', 'volatileAcidity', 'citricAcid', 'residualSugar', 'chlorides', 'freeSulfurDioxide', 'totalSulfurDioxide', 'density', 'ph', 'sulphates', 'quality']
+url_dados = "database/winequality-red.csv"
+colunas = ['fixedAcidity', 'volatileAcidity', 'citricAcid', 'residualSugar', 'chlorides', 'freeSulfurDioxide', 'totalSulfurDioxide', 'density', 'ph', 'sulphates']
 
 # Carga dos dados
 dataset = carregador.carregar_dados(url_dados, colunas)
