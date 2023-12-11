@@ -59,13 +59,13 @@ def get_vinhos():
 @app.post('/vinho', tags=[vinho_tag],
           responses={"200": VinhoViewSchema, "400": ErrorSchema, "409": ErrorSchema})
 def predict(form: VinhoSchema):
-    """Adiciona um novo candidato à base de dados
-    Retorna uma representação dos candidatos e predições associadas.
+    """Adiciona um novo vinho à base de dados
+    Retorna uma representação dos vinhos e predições associadas.
     """
     
     # Carregando modelo gerado no Colab e adicionado a determinado diretório no Github
     ml_path = 'ml_model/winequality_knn_pdr.pkl'
-    modelo = Model().carrega_modelo(ml_path)
+    modelo = Model.carrega_modelo(ml_path)
     
     vinho = Vinho(
         name=form.name.strip(),
@@ -80,7 +80,7 @@ def predict(form: VinhoSchema):
         ph=form.ph,
         sulphates=form.sulphates,
         alcohol=form.alcohol,
-        quality=Model().preditor(modelo, form)
+        quality=Model.preditor(modelo, form)
     )
 
     logger.debug(f"Adicionando vinho de nome: '{vinho.name}'")
@@ -110,7 +110,7 @@ def predict(form: VinhoSchema):
         return {"message": error_msg}, 400
 
 
-# Rota de busca de candidato por nome
+# Rota de busca de vinho por nome
 @app.get('/vinho', tags=[vinho_tag],
          responses={"200": VinhoViewSchema, "404": ErrorSchema})
 def get_vinho(query: VinhoBuscaSchema):    
@@ -133,7 +133,7 @@ def get_vinho(query: VinhoBuscaSchema):
         # se o vinho não foi encontrado
         error_msg = f"Vinho {vinho_nome} não encontrado na base :/"
         logger.warning(f"Erro ao buscar vinho '{vinho_nome}', {error_msg}")
-        return {"mesage": error_msg}, 404
+        return {"message": error_msg}, 404
     else:
         logger.debug(f"Vinho encontrado: '{vinho.name}'")
         # retorna a representação do vinho
@@ -142,7 +142,7 @@ def get_vinho(query: VinhoBuscaSchema):
 
 # Rota de remoção de vinho por nome
 @app.delete('/vinho', tags=[vinho_tag],
-            responses={"200": VinhoViewSchema, "404": ErrorSchema}) #responses={"200": CandidatoDelSchema, "404": ErrorSchema})
+            responses={"200": VinhoViewSchema, "404": ErrorSchema}) 
 def delete_vinho(query: VinhoBuscaSchema):
     """Remove um vinho cadastrado na base a partir do nome da amostra
 

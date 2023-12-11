@@ -7,7 +7,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import MinMaxScaler
 
 class Model:    
-    def carrega_modelo(self, path):
+    def carrega_modelo(path):
         """Carrega o modelo pkl
         """
         
@@ -17,7 +17,7 @@ class Model:
             raise Exception('Formato de arquivo não suportado')
         return model
     
-    def preditor(self, model, form):
+    def preditor(model, form):
         """Realiza a predição de classificação um vinho com base no modelo treinado
         """
         X_input = np.array([

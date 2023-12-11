@@ -62,8 +62,7 @@ const postItem = async (inputName, inputFixedAcitidy, inputVolatileAcitidy, inpu
     formData.append('density', inputDensity);
     formData.append('ph', inputPh);
     formData.append('sulphates', inputSulphates);
-    formData.append('alcohol', inputAlcohol);
-    console.log(formData);
+    formData.append('alcohol', inputAlcohol);    
 
     let url = 'http://127.0.0.1:5000/vinho';
     fetch(url, {
@@ -117,7 +116,6 @@ const removeElement = () => {
   --------------------------------------------------------------------------------------
 */
 const deleteItem = (name) => {
-    console.log(name);
     let url = 'http://127.0.0.1:5000/vinho?name=' + name;
     fetch(url, {
         method: 'delete'
@@ -147,7 +145,7 @@ const newItem = async () => {
     let inputSulphates = document.getElementById("newSulphates").value;
     let inputAlcohol = document.getElementById("newAlcohol").value;
 
-    const checkUrl = `http://127.0.0.1:5000/vinhos?name=${inputName}`;
+    const checkUrl = `http://127.0.0.1:5000/vinho?name=${inputName}`;
     fetch(checkUrl, {
         method: 'get'
     })
@@ -162,16 +160,16 @@ const newItem = async () => {
             } else if (inputName === '') {
                     alert("O nome da amostra do vinho não pode ser vazio!");
             } else {
-                insertList(inputName, inputFixedAcitidy, inputVolatileAcidity, inputCitricAcid, inputResidualSugar, inputChlorides, inputFreeSulfurDioxide, inputTotalSulfurDioxide, inputDensity, inputPh, inputSulphates, inputAlcohol);
+                //insertList(inputName, inputFixedAcitidy, inputVolatileAcidity, inputCitricAcid, inputResidualSugar, inputChlorides, inputFreeSulfurDioxide, inputTotalSulfurDioxide, inputDensity, inputPh, inputSulphates, inputAlcohol);
                 postItem(inputName, inputFixedAcitidy, inputVolatileAcidity, inputCitricAcid, inputResidualSugar, inputChlorides, inputFreeSulfurDioxide, inputTotalSulfurDioxide, inputDensity, inputPh, inputSulphates, inputAlcohol);
                 alert("Vinho adicionado!");
+                getList();
             }
         })
         .catch((error) => {
             console.error('Error:', error);
         });
 }
-
 
 /*
   --------------------------------------------------------------------------------------
@@ -191,19 +189,18 @@ const insertList = (name, fixedAcitidy, volatileAcidity, citricAcid, residualSug
     var deleteCell = row.insertCell(-1);
     insertDeleteButton(deleteCell);
 
-    // DESFAZER COMENTÁRIOS
-    // document.getElementById("newName").value = "";
-    // document.getElementById("newFixedAcidity").value = "";
-    // document.getElementById("newVolatileAcidity").value = "";
-    // document.getElementById("newCitricAcid").value = "";
-    // document.getElementById("newResidualSugar").value = "";
-    // document.getElementById("newChlorides").value = "";
-    // document.getElementById("newFreeSulfurDioxide").value = "";
-    // document.getElementById("newTotalSulfurDioxide").value = "";
-    // document.getElementById("newDensity").value = "";
-    // document.getElementById("newPh").value = "";
-    // document.getElementById("newSulphates").value = "";
-    // document.getElementById("newAlcohol").value = "";
+    document.getElementById("newName").value = "";
+    document.getElementById("newFixedAcidity").value = "";
+    document.getElementById("newVolatileAcidity").value = "";
+    document.getElementById("newCitricAcid").value = "";
+    document.getElementById("newResidualSugar").value = "";
+    document.getElementById("newChlorides").value = "";
+    document.getElementById("newFreeSulfurDioxide").value = "";
+    document.getElementById("newTotalSulfurDioxide").value = "";
+    document.getElementById("newDensity").value = "";
+    document.getElementById("newPh").value = "";
+    document.getElementById("newSulphates").value = "";
+    document.getElementById("newAlcohol").value = "";
 
     removeElement();
 }

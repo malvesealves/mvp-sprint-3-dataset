@@ -7,41 +7,41 @@ import numpy as np
 class VinhoSchema(BaseModel):
     """ Define como um novo vinho a ser inserido deve ser representado
     """
-    name: str = "Amostra_1"
-    fixedAcidity: float = 323.1
-    volatileAcidity: float = 111.1
-    citricAcid: float = 1.1
-    residualSugar: float = 3.6
-    chlorides: float = 2.6
-    freeSulfurDioxide: float = 8.65
-    totalSulfurDioxide: float = 1.1
-    density: float = 1.1
-    ph: float = 1.1
-    sulphates: float = 1.1
-    alcohol: float = 1.1
+    name: str = "Amostra1"
+    fixedAcidity: float = 7.9
+    volatileAcidity: float = 0.58
+    citricAcid: float = 0.27
+    residualSugar: float = 1.5
+    chlorides: float = 0.116
+    freeSulfurDioxide: float = 10.0
+    totalSulfurDioxide: float = 28.0
+    density: float = 0.9972
+    ph: float = 3.24
+    sulphates: float = 1.53
+    alcohol: float = 9.2
 
 class VinhoViewSchema(BaseModel):
     """ Define como um vinho será retornado
     """
-    name: str = "Amostra_1"
-    fixedAcidity: float = 323.1
-    volatileAcidity: float = 111.1
-    citricAcid: float = 1.1
-    residualSugar: float = 3.6
-    chlorides: float = 2.6
-    freeSulfurDioxide: float = 8.65
-    totalSulfurDioxide: float = 1.1
-    density: float = 1.1
-    ph: float = 1.1
-    sulphates: float = 1.1
-    alcohol: float = 1.1
+    name: str = "Amostra1"
+    fixedAcidity: float = 7.9
+    volatileAcidity: float = 0.58
+    citricAcid: float = 0.27
+    residualSugar: float = 1.5
+    chlorides: float = 0.116
+    freeSulfurDioxide: float = 10.0
+    totalSulfurDioxide: float = 28.0
+    density: float = 0.9972
+    ph: float = 3.24
+    sulphates: float = 1.53
+    alcohol: float = 9.2
     quality: int = None
 
 class VinhoBuscaSchema(BaseModel):
     """ Define como deve ser a estrutura que representa a busca. Que será
         feita apenas com base no nome do vinho.
     """
-    name: str = "Amostra_1"
+    name: str = "Amostra1"
 
 
 class ListaVinhosSchema(BaseModel):
@@ -53,7 +53,7 @@ class ListaVinhosSchema(BaseModel):
 class VinhoDelSchema(BaseModel):
     """ Define como um vinho para deleção será representado
     """
-    name: str = "Amostra_1"
+    name: str = "Amostra1"
 
 
 def apresenta_vinho(vinho: Vinho):
